@@ -36,10 +36,10 @@ const storage = new GridFsStorage({
     })
   },
 })
-const upload = multer({ storage })
+export const uploadMiddleware = multer({ storage })
 
 export default Router()
-  .post('/', upload.single('file'), (req, res) => {
+  .post('/', uploadMiddleware.single('file'), (req, res) => {
     res.json({ file: req.file })
   })
   .get('/:filename', (req, res) => {

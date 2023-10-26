@@ -1,2 +1,2 @@
-import router from './router'
-export { router }
+import router, { uploadMiddleware } from './router'
+export { router, uploadMiddleware }
